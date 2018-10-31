@@ -1,5 +1,6 @@
 package com.jk;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
@@ -14,6 +15,7 @@ import org.springframework.http.converter.HttpMessageConverter;
 
 @SpringBootApplication
 @ImportResource(value = {"classpath:dubbo-provider.xml"})
+@MapperScan("com.jk.mapper")
 public class SpringbootPrividerDemoApplication {
 
     public static void main(String[] args) {
@@ -25,7 +27,7 @@ public class SpringbootPrividerDemoApplication {
         return new Queue("chuchu");
 
     }
-    @Bean
+
     public HttpMessageConverters fastJsonHttpMessageConverters() {
         FastJsonHttpMessageConverter fastConverter = new FastJsonHttpMessageConverter();
         FastJsonConfig fastJsonConfig = new FastJsonConfig();
