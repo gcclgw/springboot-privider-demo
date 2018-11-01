@@ -1,5 +1,5 @@
 server:
-  port: 8082
+  port: 8010
 spring:
   rabbitmq:
     password: guest
@@ -15,7 +15,7 @@ spring:
         min-idle: 0
   data:
     mongodb:
-      uri: mongodb://127.0.0.1:27017/1804a
+      uri: mongodb://127.0.0.1:27017/admin
   datasource:
     username: root
     password: root
