@@ -2,6 +2,7 @@ package com.jk.mapper.business;
 
 import com.jk.model.business.Business;
 import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
@@ -16,4 +17,7 @@ public interface BusinessMapper {
 
     @Delete("delete from business where qid = #{qid}")
     void deleteBus(Integer qid);
+
+    @Insert("insert into business(qname,qstatus) values(#{qname},1)")
+    void addBus(Business business);
 }

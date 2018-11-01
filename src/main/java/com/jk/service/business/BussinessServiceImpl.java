@@ -28,5 +28,10 @@ public class BussinessServiceImpl implements  BussinessService {
         businessMapper.deleteBus(qid);
     }
 
+    @Override
+    public void addBus(Business business) {
+        businessMapper.addBus(business);
+    }
+
 
 }
