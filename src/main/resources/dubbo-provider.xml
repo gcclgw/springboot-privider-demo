@@ -21,7 +21,6 @@
 
     <!-- Bean 聲明  和本地bean一样实现服务 -->
     <bean id="userService" class="com.jk.service.user.UserServiceImpl" />
-    <bean id="userService" class="com.jk.service.user.UserServiceImpl" />
     <bean id="loginService" class="com.jk.service.login.LoginServiceImpl" />
     <bean id="powerTreeService" class="com.jk.service.powerTree.PowerTreeServiceImpl" />
     <bean id="busService" class="com.jk.service.business.BussinessServiceImpl" />
