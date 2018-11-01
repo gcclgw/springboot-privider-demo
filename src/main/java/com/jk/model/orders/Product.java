@@ -1,35 +1,27 @@
-package com.jk.model.commodity;
+package com.jk.model.orders;
 
 import java.io.Serializable;
 import java.util.Date;
 
 public class Product implements Serializable {
-
-
-    private static final long serialVersionUID = -4296765510277358216L;
+    private static final long serialVersionUID = 8546418900134345111L;
     private Integer pid;
 
     private String pname;
 
-    private String market_price;
+    private Double marketPrice;
 
-    private String shop_price;
+    private Double shopPrice;
 
     private String image;
 
     private String pdesc;
 
-    private Integer is_hot;
+    private Integer isHot;
 
     private Date pdate;
 
     private Integer csid;
-
-    private Integer status;
-
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
-    }
 
     public Integer getPid() {
         return pid;
@@ -44,23 +36,23 @@ public class Product implements Serializable {
     }
 
     public void setPname(String pname) {
-        this.pname = pname;
+        this.pname = pname == null ? null : pname.trim();
     }
 
-    public String getMarket_price() {
-        return market_price;
+    public Double getMarketPrice() {
+        return marketPrice;
     }
 
-    public void setMarket_price(String market_price) {
-        this.market_price = market_price;
+    public void setMarketPrice(Double marketPrice) {
+        this.marketPrice = marketPrice;
     }
 
-    public String getShop_price() {
-        return shop_price;
+    public Double getShopPrice() {
+        return shopPrice;
     }
 
-    public void setShop_price(String shop_price) {
-        this.shop_price = shop_price;
+    public void setShopPrice(Double shopPrice) {
+        this.shopPrice = shopPrice;
     }
 
     public String getImage() {
@@ -68,7 +60,7 @@ public class Product implements Serializable {
     }
 
     public void setImage(String image) {
-        this.image = image;
+        this.image = image == null ? null : image.trim();
     }
 
     public String getPdesc() {
@@ -76,15 +68,15 @@ public class Product implements Serializable {
     }
 
     public void setPdesc(String pdesc) {
-        this.pdesc = pdesc;
+        this.pdesc = pdesc == null ? null : pdesc.trim();
     }
 
-    public Integer getIs_hot() {
-        return is_hot;
+    public Integer getIsHot() {
+        return isHot;
     }
 
-    public void setIs_hot(Integer is_hot) {
-        this.is_hot = is_hot;
+    public void setIsHot(Integer isHot) {
+        this.isHot = isHot;
     }
 
     public Date getPdate() {
@@ -101,13 +93,5 @@ public class Product implements Serializable {
 
     public void setCsid(Integer csid) {
         this.csid = csid;
-    }
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
     }
 }
