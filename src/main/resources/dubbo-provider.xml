@@ -28,6 +28,7 @@
     <bean id="busService" class="com.jk.service.business.BussinessServiceImpl" />
     <bean id="commodityService" class="com.jk.service.commodity.CommodityServiceImpl" />
     <bean id="contService" class="com.jk.service.contractx.ContServiceImpl" />
+    <bean id="poixService" class="com.jk.service.poix.PoixServiceImpl" />
 
 
 
@@ -51,4 +52,5 @@
     <dubbo:service interface="com.jk.service.powerTree.PowerTreeService" ref="powerTreeService" />
     <dubbo:service interface="com.jk.service.commodity.CommodityService" ref="commodityService" />
     <dubbo:service interface="com.jk.service.business.BussinessService" ref="busService" />
+    <dubbo:service interface="com.jk.service.poix.PoixService" ref="poixService" />
 </beans>

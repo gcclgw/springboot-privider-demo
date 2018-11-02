@@ -9,11 +9,19 @@ public class Contx implements Serializable {
     private Integer htid;
     private String htname;
     private String htstatus;
-    private Date startdate;
-    private Date endtime;
-    private Integer qid;
-    private Date creatdate;
+    private String startdate;
+    private String endtime;
+    private String qid;
+    private String creatdate;
     private String htinfo;
+
+    private Integer page;
+
+    private Integer rows;
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
 
     public Integer getHtid() {
         return htid;
@@ -39,35 +47,35 @@ public class Contx implements Serializable {
         this.htstatus = htstatus;
     }
 
-    public Date getStartdate() {
+    public String getStartdate() {
         return startdate;
     }
 
-    public void setStartdate(Date startdate) {
+    public void setStartdate(String startdate) {
         this.startdate = startdate;
     }
 
-    public Date getEndtime() {
+    public String getEndtime() {
         return endtime;
     }
 
-    public void setEndtime(Date endtime) {
+    public void setEndtime(String endtime) {
         this.endtime = endtime;
     }
 
-    public Integer getQid() {
+    public String getQid() {
         return qid;
     }
 
-    public void setQid(Integer qid) {
+    public void setQid(String qid) {
         this.qid = qid;
     }
 
-    public Date getCreatdate() {
+    public String getCreatdate() {
         return creatdate;
     }
 
-    public void setCreatdate(Date creatdate) {
+    public void setCreatdate(String creatdate) {
         this.creatdate = creatdate;
     }
 
@@ -77,5 +85,21 @@ public class Contx implements Serializable {
 
     public void setHtinfo(String htinfo) {
         this.htinfo = htinfo;
+    }
+
+    public Integer getPage() {
+        return page;
+    }
+
+    public void setPage(Integer page) {
+        this.page = page;
+    }
+
+    public Integer getRows() {
+        return rows;
+    }
+
+    public void setRows(Integer rows) {
+        this.rows = rows;
     }
 }
