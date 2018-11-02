@@ -31,6 +31,8 @@
     <bean id="commodityService" class="com.jk.service.commodity.CommodityServiceImpl" />
     <bean id="contService" class="com.jk.service.contractx.ContServiceImpl" />
     <bean id="checkService" class="com.jk.service.check.CheckServiceImpl" />
+    <bean id="regService" class="com.jk.service.register.RegisterServiceImpl" />
+    <bean id="loginUserService" class="com.jk.service.loginUser.LoginUserServiceImpl" />
 
 
 
@@ -57,4 +59,6 @@
     <dubbo:service interface="com.jk.service.commodity.CommodityService" ref="commodityService" />
     <dubbo:service interface="com.jk.service.business.BussinessService" ref="busService" />
     <dubbo:service interface="com.jk.service.check.CheckService" ref="checkService" />
+    <dubbo:service interface="com.jk.service.register.RegisterService" ref="regService" />
+    <dubbo:service interface="com.jk.service.loginUser.LoginUserService" ref="loginUserService" />
 </beans>
