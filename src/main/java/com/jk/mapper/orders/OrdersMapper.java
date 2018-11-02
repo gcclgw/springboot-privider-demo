@@ -2,6 +2,7 @@ package com.jk.mapper.orders;
 
 import com.jk.model.orders.Orders;
 import com.jk.model.orders.Product;
+import com.jk.model.orders.Trees;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -33,4 +34,6 @@ public interface OrdersMapper {
 
     @Update("update orders  set name=#{orders.name},phone=#{orders.phone},addr=#{orders.addr} where oid=#{orders.oid} ")
     void updateOrder(@Param("orders") Orders orders);
+
+
 }
