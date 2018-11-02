@@ -30,9 +30,6 @@
     <bean id="busService" class="com.jk.service.business.BussinessServiceImpl" />
     <bean id="commodityService" class="com.jk.service.commodity.CommodityServiceImpl" />
     <bean id="contService" class="com.jk.service.contractx.ContServiceImpl" />
-    <bean id="checkService" class="com.jk.service.check.CheckServiceImpl" />
-    <bean id="regService" class="com.jk.service.register.RegisterServiceImpl" />
-    <bean id="loginUserService" class="com.jk.service.loginUser.LoginUserServiceImpl" />
 
 
 
