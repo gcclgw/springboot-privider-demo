@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jk.mapper.login.LoginMapper">
+
+	<!-- 
+		标签：
+		insert：增
+		delete：删
+		update：改
+		select：查
+		
+		属性：
+		id：该标签唯一标识，要和绑定的mapper类中的方法名一一对应
+		parameterType：参数类型，接收参数时使用
+		resultType：返回值类型，查询时使用
+		
+		resultMap：
+		parameterMap：
+	 -->
+
+	<!--<select id="loginUserName" resultType="com.jk.model.user.User" parameterType="string">
+		select au.uid as uid,au.username as username , au.password as password,
+			tn.rid as roleId , tr.rolename as rolename
+			 from adminuser au
+			LEFT JOIN t_nexus tn  on  au.uid = tn.uid
+			LEFT JOIN t_role tr on tr.rid = tn.rid
+			where au.username = #{username}
+	</select>-->
+
+	<select id="login" resultType="com.jk.model.user.User" parameterType="com.jk.model.user.User">
+		select au.uid as uid,au.username as username , au.password as password,
+		tn.rid as roleId , GROUP_CONCAT(tr.rolename) as rolename
+		 from adminuser au
+		LEFT JOIN t_nexus tn  on  au.uid = tn.uid
+		LEFT JOIN t_role tr on tr.rid = tn.rid
+		where au.username = #{username} and au.password =  #{password}
+		GROUP by au.uid
+	</select>
+
+</mapper>
