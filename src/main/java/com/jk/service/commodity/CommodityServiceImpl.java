@@ -1,6 +1,5 @@
 package com.jk.service.commodity;
 
-import com.alibaba.fastjson.JSONObject;
 import com.jk.mapper.commodity.CommodityMapper;
 import com.jk.model.commodity.Categorysecond;
 import com.jk.model.commodity.Product;
@@ -15,7 +14,6 @@ public class CommodityServiceImpl implements CommodityService {
 
     @Autowired
     private CommodityMapper commodityMapper;
-
 
     @Override
     public List<Product> queryCommodity() {
@@ -56,4 +54,16 @@ public class CommodityServiceImpl implements CommodityService {
             commodityMapper.addtjsx(pid,splitname[i],splitvalue[i]);
         }
     }
+
+    @Override
+    public List<Product> queryByStatus() {
+        return commodityMapper.queryByStatus();
+    }
+
+    @Override
+    public void updateStatus(Integer pid) {
+        commodityMapper.updateStatus(pid);
+    }
+
+
 }

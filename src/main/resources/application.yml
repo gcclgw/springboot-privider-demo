@@ -15,7 +15,7 @@ spring:
         min-idle: 0
   data:
     mongodb:
-      uri: mongodb://127.0.0.1:27017/test
+      uri: mongodb://127.0.0.1:27017/1804a
   datasource:
     username: root
     password: root
