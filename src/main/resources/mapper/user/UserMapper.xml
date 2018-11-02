@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jk.mapper.user.UserMapper">
+
+	
+	<select id="findUserRoleById"   resultType="com.jk.model.role.Role" >
+			SELECT  r.*  FROM  T_ROLE  r , t_nexus  ur where  r.rid=ur.rid and ur.uid=#{userId}
+	</select>
+	
+	<select id="findRole" resultType="java.util.LinkedHashMap">
+ 		SELECT  r.rid as "rid",r.*   FROM  t_role  r
+ 		</select>
+
+	<delete id="deleteUserRole" parameterType="String">
+ 			delete  from t_nexus   where  uid=#{userId}
+ 		</delete>
+ 	<insert id="SaveUserRole" >
+	    insert into t_nexus (uid,rid)
+	    values  
+	    <foreach collection="roleIds" item="roleId" separator="," >  
+	        (#{0},#{roleId})  
+	    </foreach> 
+  </insert>
+
+	<select id="selectUserList" parameterType="com.jk.model.user.User" resultType="com.jk.model.user.User">
+		select  u.uid as uid , u.username as username ,
+		u.password as password
+		 from adminuser u
+
+		limit #{startIndex},#{rows}
+	</select>
+	
+	<select id="getUserCount" parameterType="com.jk.domain.user.User" resultType="int">
+		select count(1) from adminuser
+	</select>
+	
+</mapper>

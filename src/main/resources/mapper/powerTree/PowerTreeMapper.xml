@@ -30,19 +30,17 @@
 			tp.pid as pid
 			 from t_powertree tp
 			where tp.id = #{pid}
-	</select>
-	<select id="getUserPowerChildrenList" resultType="com.jk.model.power.PowerTree" parameterType="String">
+	</select>-->
+	<!--<select id="getUserPowerChildrenList" resultType="com.jk.model.power.PowerTree" parameterType="String">
 		select DISTINCT tp.id as id  , tp.text as text , tp.url as href ,tp.pid as pid from t_powertree tp
 		LEFT JOIN  role_power rp on rp.pid  = tp.id
 		LEFT JOIN t_role  tr on tr. rid  = rp.rid
 		LEFT JOIN t_nexus tn on tr.rid  = tn.rid
 		where  tn.uid = #{userId}
-		/*and tp.url is not null*/
 
 
+	</select>-->
 
-	</select>
--->
 
     <!--<select id="getUserPowerUrlListByUserId" resultType="string" parameterType="string">-->
     <!--select distinct tt.url from t_tree tt-->

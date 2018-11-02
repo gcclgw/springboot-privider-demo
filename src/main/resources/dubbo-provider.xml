@@ -25,6 +25,7 @@
     <bean id="powerTreeService" class="com.jk.service.powerTree.PowerTreeServiceImpl" />
     <bean id="busService" class="com.jk.service.business.BussinessServiceImpl" />
     <bean id="commodityService" class="com.jk.service.commodity.CommodityServiceImpl" />
+    <!--<bean id="adverService" class="com.jk.service.adver.AdverServiceImpl" />-->
 
 
 
@@ -33,5 +34,7 @@
     <dubbo:service interface="com.jk.service.login.LoginService" ref="loginService" />
     <dubbo:service interface="com.jk.service.powerTree.PowerTreeService" ref="powerTreeService" />
     <dubbo:service interface="com.jk.service.commodity.CommodityService" ref="commodityService" />
-    <dubbo:service interface="com.jk.service.business.BussinessService" ref="busService" />
+    <!--<dubbo:service interface="com.jk.service.business.BussinessService" ref="busService" />-->
+    <!--<dubbo:service interface="com.jk.service.adver.AdverService" ref="adverService" />-->
+
 </beans>
