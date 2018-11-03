@@ -36,4 +36,5 @@ public interface OrdersMapper {
     void updateOrder(@Param("orders") Orders orders);
 
 
+    List<Trees> getSysOrganizeByParentId(String toString);
 }
