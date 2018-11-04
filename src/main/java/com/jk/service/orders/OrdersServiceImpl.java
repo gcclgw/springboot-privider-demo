@@ -4,6 +4,7 @@ import com.alibaba.dubbo.common.json.JSONObject;
 import com.jk.mapper.orders.OrdersMapper;
 import com.jk.model.orders.Orders;
 import com.jk.model.orders.Product;
+import com.jk.model.orders.Trees;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -52,5 +53,10 @@ public class OrdersServiceImpl implements OrdersService {
     @Override
     public void updateOrder(Orders orders) {
         ordersMapper.updateOrder(orders);
+    }
+
+    @Override
+    public List<Trees> getSysOrganizeByParentId(Integer id) {
+        return ordersMapper.getSysOrganizeByParentId(id.toString());
     }
 }

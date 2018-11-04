@@ -9,4 +9,6 @@ import java.util.List;
 public interface LoginUserMapper {
     @Select("select * from user where username = #{username}")
     List<Users> loginUser(@Param("username") String username);
+
+
 }

@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface ContService {
     List<Contx> queryCont();
+    void poixAdd(Contx contx);
 }
