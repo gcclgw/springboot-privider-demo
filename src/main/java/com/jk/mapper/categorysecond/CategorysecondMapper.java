@@ -45,7 +45,7 @@ public interface CategorysecondMapper {
     /**
      * 修改二级
      */
-    @Update("update categorysecond set csname = ${csname},cid = ${cid} where csid = #{csid}")
+    @Update("update categorysecond set csname = #{csname},cid = #{cid} where csid = #{csid}")
     void editSecond(Categorysecond categorysecond);
 
     /**
