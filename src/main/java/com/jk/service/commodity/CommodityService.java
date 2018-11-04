@@ -11,23 +11,31 @@ import java.util.List;
 
 public interface CommodityService {
 
+    /*查询商品列表*/
     List<Product> queryCommodity();
-
+/*删除商品*/
     void deleteCommodity(String pid);
-
+/*动态下拉二级*/
     List<Categorysecond> querycsid();
-
+/*新增*/
     void addCommodity(Product product);
-
+/*根据id回显*/
     Product toupdate(Integer pid);
-
+/*修改*/
     void updateCommodity(Product product);
-
+/*添加属性*/
     void addtjsx(Integer pid, String cname, String cvalue);
-
+/*商品未审核查询*/
     List<Product> queryByStatus();
-
+/*修改状态*/
     void updateStatus(Integer pid);
 
+    /*查询热销商品*/
+    List<Product> querySell();
 
+    /*查询最新商品*/
+    List<Product> queryDate();
+
+    /*一级分类查询*/
+    List<Product> thePrimaryQuery(String cid);
 }

@@ -65,5 +65,20 @@ public class CommodityServiceImpl implements CommodityService {
         commodityMapper.updateStatus(pid);
     }
 
+    @Override
+    public List<Product> querySell() {
+        return commodityMapper.querySell();
+    }
+
+    @Override
+    public List<Product> queryDate() {
+        return commodityMapper.queryDate();
+    }
+
+    @Override
+    public List<Product> thePrimaryQuery(String cid) {
+        return commodityMapper.thePrimaryQuery(cid);
+    }
+
 
 }
