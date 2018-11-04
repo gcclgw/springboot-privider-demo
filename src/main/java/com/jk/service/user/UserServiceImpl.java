@@ -36,9 +36,15 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public  List<LinkedHashMap<String, String>> findRole(Role role) {
+    public  ResultPage findRole(Role role) {
 
-        return userMapper.findRole(role);
+        role.calculate();
+        ResultPage resultPage = new ResultPage();
+        int  count = userMapper.getRoleCount(role);
+        resultPage.setTotal(count);
+        List<User> users = userMapper.selectRoleList(role);
+        resultPage.setRows(users);
+        return resultPage;
     }
 
     @Override

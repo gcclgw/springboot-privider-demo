@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jk.mapper.adver.AdverMapper">
+
+
+
+	<insert id="addAdver" parameterType="com.jk.model.adver.Adver">
+		INSERT into ec_adver(adverid,advername,adverurl,adimg,adseatid)
+		VALUES(#{adverid},#{advername},#{adverurl},#{adimg},null)
+	</insert>
+
+	<select id="selectAdverList" parameterType="com.jk.model.adver.Adver" resultType="com.jk.model.adver.Adver">
+		select  eca.adverid as adverid , eca.advername as advername , eca.adverurl as adverurl,
+			eca.adimg as adimg , eca.adseatid as adseatid , ecas.seatname  as seatname
+		 from ec_adver eca LEFT JOIN  ec_adverseat   ecas on  ecas.seatid = eca.adseatid
+		limit #{startIndex},#{rows}
+	</select>
+	
+	<select id="getAdverCount" parameterType="com.jk.model.adver.Adver" resultType="int">
+		select count(1) from ec_adver
+	</select>
+	
+</mapper>

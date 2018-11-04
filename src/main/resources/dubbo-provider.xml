@@ -20,21 +20,43 @@
 
 
     <!-- Bean 聲明  和本地bean一样实现服务 -->
+    <bean id="categoryService" class="com.jk.service.category.CategoryServiceImpl" />
+    <bean id="categorysecondService" class="com.jk.service.categorysecond.CategorysecondServiceImpl" />
     <bean id="userService" class="com.jk.service.user.UserServiceImpl" />
+    <bean id="mansService" class="com.jk.service.mans.MansServiceImpl" />
+    <bean id="bersService" class="com.jk.service.bers.BersServiceImpl" />
     <bean id="loginService" class="com.jk.service.login.LoginServiceImpl" />
     <bean id="powerTreeService" class="com.jk.service.powerTree.PowerTreeServiceImpl" />
-    <bean id="busService" class="com.jk.service.business.BussinessServiceImpl" />
     <bean id="commodityService" class="com.jk.service.commodity.CommodityServiceImpl" />
     <!--<bean id="adverService" class="com.jk.service.adver.AdverServiceImpl" />-->
+    <bean id="contService" class="com.jk.service.contractx.ContServiceImpl" />
+    <bean id="checkService" class="com.jk.service.check.CheckServiceImpl" />
+    <!-- Bean 聲明  和本地bean一样实现服务 -->
+    <bean id="ordersService" class="com.jk.service.orders.OrdersServiceImpl" />
+    <bean id="roleService" class="com.jk.service.role.RoleServiceImpl" />
+    <bean id="adverService" class="com.jk.service.adver.AdverSrviceImpl" />
+    <bean id="adverSeatService" class="com.jk.service.adverSeat.AdverSeatServiceImpl" />
 
 
 
     <!-- 声明需要暴露的服务接口 -->
     <dubbo:service interface="com.jk.service.user.UserService" ref="userService" />
+
+
+
+    <!-- 声明需要暴露的服务接口 -->
+    <dubbo:service interface="com.jk.service.orders.OrdersService" ref="ordersService" />
+    <dubbo:service interface="com.jk.service.contractx.ContService" ref="contService" />
+    <dubbo:service interface="com.jk.service.category.CategoryService" ref="categoryService" />
+    <dubbo:service interface="com.jk.service.categorysecond.CategorysecondService" ref="categorysecondService" />
+    <dubbo:service interface="com.jk.service.mans.MansService" ref="mansService" />
+    <dubbo:service interface="com.jk.service.bers.BersService" ref="bersService" />
     <dubbo:service interface="com.jk.service.login.LoginService" ref="loginService" />
     <dubbo:service interface="com.jk.service.powerTree.PowerTreeService" ref="powerTreeService" />
     <dubbo:service interface="com.jk.service.commodity.CommodityService" ref="commodityService" />
-    <!--<dubbo:service interface="com.jk.service.business.BussinessService" ref="busService" />-->
     <!--<dubbo:service interface="com.jk.service.adver.AdverService" ref="adverService" />-->
-
+    <dubbo:service interface="com.jk.service.check.CheckService" ref="checkService" />
+    <dubbo:service interface="com.jk.service.role.RoleService" ref="roleService" />
+    <dubbo:service interface="com.jk.service.adver.AdverService" ref="adverService" />
+    <dubbo:service interface="com.jk.service.adverSeat.AdverSeatService" ref="adverSeatService" />
 </beans>

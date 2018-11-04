@@ -25,6 +25,18 @@ public class PowerTree extends Page implements Serializable {
 
     private Boolean selectable;
 
+    /**
+     * 业务字段
+     */
+    private String pids;
+
+    public String getPids() {
+        return pids;
+    }
+
+    public void setPids(String pids) {
+        this.pids = pids;
+    }
 
     public String getId() {
         return id;

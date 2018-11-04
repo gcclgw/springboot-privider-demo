@@ -1,8 +1,10 @@
 package com.jk.model.adverseat;
 
+import com.jk.utils.Page;
+
 import java.io.Serializable;
 
-public class Adverseat implements Serializable {
+public class Adverseat  extends Page implements Serializable {
 
     private static final long serialVersionUID = 8596608570736561743L;
     /**
