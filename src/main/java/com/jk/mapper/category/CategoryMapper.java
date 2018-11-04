@@ -43,4 +43,11 @@ public interface CategoryMapper {
      */
     @Update("update category set cname = #{cname} where cid = #{cid}")
     void editcate(Category category);
+
+    /**
+     * 根据一级删二级
+     * @param cid
+     */
+    @Delete("delete from categorysecond where cid = #{cid}")
+    void delCategorysecond(String cid);
 }
