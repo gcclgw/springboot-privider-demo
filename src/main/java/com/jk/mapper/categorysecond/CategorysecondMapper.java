@@ -56,7 +56,7 @@ public interface CategorysecondMapper {
     List<Category> querycate();
 
     /**
-     * 根据一级查二级
+     * 根据二级查商品
      */
     @Select("SELECT * FROM categorysecond")
     List<Categorysecond> queryOneAndTwo();

@@ -76,8 +76,8 @@ public class CommodityServiceImpl implements CommodityService {
     }
 
     @Override
-    public List<Product> thePrimaryQuery(String cid) {
-        return commodityMapper.thePrimaryQuery(cid);
+    public List<Product> thePrimaryQuery(String cid,String csid) {
+        return commodityMapper.thePrimaryQuery(cid,csid);
     }
 
 
