@@ -31,4 +31,8 @@ public interface OrdersService {
     void updateOrder(Orders orders);
 
     List<Trees> getSysOrganizeByParentId(Integer id);
+
+    //修改订单状态
+    void updateOrderById(Integer oid);
+
 }

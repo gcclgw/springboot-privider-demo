@@ -37,4 +37,7 @@ public interface OrdersMapper {
 
 
     List<Trees> getSysOrganizeByParentId(String toString);
+
+    @Update("update orders  set state = 1  where oid=#{oid} ")
+    void updateOrderById(Integer oid);
 }
