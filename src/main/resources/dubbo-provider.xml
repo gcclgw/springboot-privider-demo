@@ -35,17 +35,13 @@
     <bean id="loginUserService" class="com.jk.service.loginUser.LoginUserServiceImpl" />
     <bean id="ordersService" class="com.jk.service.orders.OrdersServiceImpl" />
     <bean id="oixServiceService" class="com.jk.service.poix.PoixServiceImpl" />
-
-
-
     <bean id="poixService" class="com.jk.service.poix.PoixServiceImpl" />
-    <bean id="registerService" class="com.jk.service.register.RegisterServiceImpl" />
+    <bean id="logoService" class="com.jk.service.logo.LogoServiceImpl" />
 
     <!-- Bean 聲明  和本地bean一样实现服务 -->
 
 
     <!-- 声明需要暴露的服务接口 -->
-    <dubbo:service interface="com.jk.service.orders.OrdersService" ref="ordersService" />
     <dubbo:service interface="com.jk.service.user.UserService" ref="userService" />
     <dubbo:service interface="com.jk.service.bers.BersService" ref="bersService" />
     <dubbo:service interface="com.jk.service.category.CategoryService" ref="categoryService" />
@@ -60,8 +56,9 @@
     <dubbo:service interface="com.jk.service.powerTree.PowerTreeService" ref="powerTreeService" />
     <dubbo:service interface="com.jk.service.business.BussinessService" ref="busService" />
     <dubbo:service interface="com.jk.service.check.CheckService" ref="checkService" />
-    <dubbo:service interface="com.jk.service.register.RegisterService" ref="registerService" />
+    <dubbo:service interface="com.jk.service.register.RegisterService" ref="regService" />
     <dubbo:service interface="com.jk.service.poix.PoixService" ref="oixServiceService" />
+    <dubbo:service interface="com.jk.service.logo.LogoService" ref="logoService" />
 
 
 </beans>
