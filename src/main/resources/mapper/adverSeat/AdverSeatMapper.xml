@@ -6,7 +6,6 @@
 
 	<select id="selectAdverSeatList" parameterType="com.jk.model.adverseat.Adverseat" resultType="com.jk.model.adverseat.Adverseat">
 		select  ecads.seatid as seatid ,ecads.seatname as seatname
-
 		 from ec_adverseat ecads
 		limit #{startIndex},#{rows}
 	</select>

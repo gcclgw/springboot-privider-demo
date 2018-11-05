@@ -37,12 +37,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public  ResultPage findRole(Role role) {
-
         role.calculate();
         ResultPage resultPage = new ResultPage();
         int  count = userMapper.getRoleCount(role);
         resultPage.setTotal(count);
-        List<User> users = userMapper.selectRoleList(role);
+        List<Role> users = userMapper.selectRoleList(role);
         resultPage.setRows(users);
         return resultPage;
     }

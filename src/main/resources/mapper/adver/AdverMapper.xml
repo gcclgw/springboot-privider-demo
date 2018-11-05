@@ -3,6 +3,10 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jk.mapper.adver.AdverMapper">
 
+	<select id="findAdveSrById"  resultType="com.jk.model.adverseat.Adverseat">
+		SELECT  DISTINCT  ecas.*  FROM  ec_adver  eca , ec_adverseat  ecas
+        where  eca.adseatid = ecas.seatid and ecas.adverid = #{adverid}
+	</select>
 
 
 	<insert id="addAdver" parameterType="com.jk.model.adver.Adver">

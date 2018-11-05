@@ -30,7 +30,15 @@ public class AdverSrviceImpl implements AdverService{
 
     @Override
     public void addAdver(Adver adver) {
-        adver.setAdverid(StringUtil.getUUID());
         adverMapper.addAdver(adver);
     }
+
+    @Override
+    public List<Adver> findAdveSrById(String adverid) {
+        List<Adver> adverList = adverMapper.findAdveSrById(adverid);
+
+        return adverList;
+    }
+
+
 }

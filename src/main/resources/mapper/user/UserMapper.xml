@@ -5,7 +5,8 @@
 
 	
 	<select id="findUserRoleById"   resultType="com.jk.model.role.Role" >
-			SELECT  r.*  FROM  T_ROLE  r , t_nexus  ur where  r.rid=ur.rid and ur.uid=#{userId}
+			SELECT  r.rid as rid , r.rolename as text , r.pid as pid
+			  FROM  T_ROLE  r , t_nexus  ur where  r.rid=ur.rid and ur.uid=#{uid}
 	</select>
 
     <select id="selectRoleList" parameterType="com.jk.model.role.Role" resultType="com.jk.model.role.Role">

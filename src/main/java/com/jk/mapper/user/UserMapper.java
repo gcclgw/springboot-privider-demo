@@ -22,5 +22,5 @@ public interface UserMapper {
 
     int getRoleCount(Role role);
 
-    List<User> selectRoleList(Role role);
+    List<Role> selectRoleList(Role role);
 }
