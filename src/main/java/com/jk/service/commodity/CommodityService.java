@@ -38,7 +38,7 @@ public interface CommodityService {
     List<Product> queryDate();
 
     /*一级分类查询*/
-    List<Product> thePrimaryQuery(String cid);
+    List<Product> thePrimaryQuery(String cid,String csid);
 
     /*商品详情*/
     List<Product> queryDetails(String pid);
