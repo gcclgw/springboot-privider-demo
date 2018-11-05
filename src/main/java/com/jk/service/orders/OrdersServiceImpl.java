@@ -53,4 +53,9 @@ public class OrdersServiceImpl implements OrdersService {
     public void updateOrder(Orders orders) {
         ordersMapper.updateOrder(orders);
     }
+
+    @Override
+    public void updateOrderById(Integer oid) {
+        ordersMapper.updateOrderById(oid);
+    }
 }

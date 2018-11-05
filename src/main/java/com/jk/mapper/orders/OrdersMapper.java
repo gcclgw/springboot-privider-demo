@@ -33,4 +33,7 @@ public interface OrdersMapper {
 
     @Update("update orders  set name=#{orders.name},phone=#{orders.phone},addr=#{orders.addr} where oid=#{orders.oid} ")
     void updateOrder(@Param("orders") Orders orders);
+
+    @Update("update orders  set state = 1  where oid=#{oid} ")
+    void updateOrderById(Integer oid);
 }

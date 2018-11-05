@@ -28,4 +28,8 @@ public interface OrdersService {
 
     //修改订单
     void updateOrder(Orders orders);
+
+    //修改订单状态
+    void updateOrderById(Integer oid);
+
 }
