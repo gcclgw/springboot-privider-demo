@@ -1,6 +1,7 @@
 package com.jk.mapper.commodity;
 
 import com.jk.model.commodity.Categorysecond;
+import com.jk.model.commodity.CommodityProperty;
 import com.jk.model.commodity.Product;
 import org.apache.ibatis.annotations.*;
 
@@ -47,6 +48,14 @@ public interface CommodityMapper {
     List<Product> queryDate();
 
     /*一级分类查询*/
-    @Select(" select p.* from product p left join categorysecond cs on p.csid=cs.csid left join category c on cs.cid=c.cid where c.cid=#{cid} ")
+    @Select(" select p.* from product p left join categorysecond cs on p.csid=cs.csid left join category c on cs.cid=c.cid where c.cid=#{cid} and p.status=2 ")
     List<Product> thePrimaryQuery(@Param("cid") String cid);
+
+    /*商品详情*/
+    @Select(" select * from product where pid=#{pid}")
+    List<Product> queryDetails(@Param("pid")String pid);
+
+    /*商品属性*/
+    @Select(" select c.* from product p left join commodityproperty c on p.pid=c.productid where p.pid=#{pid} ")
+    List<CommodityProperty> queryCommodityProperty(@Param("pid") String pid);
 }

@@ -2,6 +2,7 @@ package com.jk.service.commodity;
 
 import com.alibaba.fastjson.JSONObject;
 import com.jk.model.commodity.Categorysecond;
+import com.jk.model.commodity.CommodityProperty;
 import com.jk.model.commodity.Product;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -38,4 +39,10 @@ public interface CommodityService {
 
     /*一级分类查询*/
     List<Product> thePrimaryQuery(String cid);
+
+    /*商品详情*/
+    List<Product> queryDetails(String pid);
+
+    /*商品属性*/
+    List<CommodityProperty> queryCommodityProperty(String pid);
 }

@@ -2,6 +2,7 @@ package com.jk.service.commodity;
 
 import com.jk.mapper.commodity.CommodityMapper;
 import com.jk.model.commodity.Categorysecond;
+import com.jk.model.commodity.CommodityProperty;
 import com.jk.model.commodity.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -78,6 +79,16 @@ public class CommodityServiceImpl implements CommodityService {
     @Override
     public List<Product> thePrimaryQuery(String cid) {
         return commodityMapper.thePrimaryQuery(cid);
+    }
+
+    @Override
+    public List<Product> queryDetails(String pid) {
+        return commodityMapper.queryDetails(pid);
+    }
+
+    @Override
+    public List<CommodityProperty> queryCommodityProperty(String pid) {
+        return commodityMapper.queryCommodityProperty(pid);
     }
 
 
