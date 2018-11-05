@@ -2,6 +2,7 @@ package com.jk.service.loginUser;
 
 import com.alibaba.fastjson.JSONObject;
 import com.jk.mapper.loginUser.LoginUserMapper;
+import com.jk.model.orders.Orders;
 import com.jk.model.users.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -27,6 +28,12 @@ public class LoginUserServiceImpl implements LoginUserService {
         json.put("flag",flag);
 
         return json;
+    }
+
+    @Override
+    public List<Orders> queryOrder(Integer uid) {
+
+        return loginUserMapper.queryOrder(uid);
     }
 
 
