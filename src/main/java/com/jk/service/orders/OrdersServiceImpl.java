@@ -59,4 +59,9 @@ public class OrdersServiceImpl implements OrdersService {
     public List<Trees> getSysOrganizeByParentId(Integer id) {
         return ordersMapper.getSysOrganizeByParentId(id.toString());
     }
+
+    @Override
+    public void updateOrderById(Integer oid) {
+        ordersMapper.updateOrderById(oid);
+    }
 }
