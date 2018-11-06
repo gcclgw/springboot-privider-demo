@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 
-@Service
+@Service("bersService")
 public class BersServiceImpl implements BersService {
     @Autowired
     private BersMapper bersMapper;
