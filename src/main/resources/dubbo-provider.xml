@@ -27,8 +27,6 @@
     <bean id="mansService" class="com.jk.service.mans.MansServiceImpl" />
     <bean id="loginService" class="com.jk.service.login.LoginServiceImpl" />
     <bean id="powerTreeService" class="com.jk.service.powerTree.PowerTreeServiceImpl" />
-    <bean id="busService" class="com.jk.service.business.BussinessServiceImpl" />
-    <bean id="checkService" class="com.jk.service.check.CheckServiceImpl" />
     <bean id="commodityService" class="com.jk.service.commodity.CommodityServiceImpl" />
     <bean id="contService" class="com.jk.service.contractx.ContServiceImpl" />
     <bean id="regService" class="com.jk.service.register.RegisterServiceImpl" />
@@ -55,8 +53,6 @@
     <dubbo:service interface="com.jk.service.orders.OrdersService" ref="ordersService" />
     <dubbo:service interface="com.jk.service.poix.PoixService" ref="poixService" />
     <dubbo:service interface="com.jk.service.powerTree.PowerTreeService" ref="powerTreeService" />
-    <dubbo:service interface="com.jk.service.business.BussinessService" ref="busService" />
-    <dubbo:service interface="com.jk.service.check.CheckService" ref="checkService" />
     <dubbo:service interface="com.jk.service.register.RegisterService" ref="registerService" />
     <dubbo:service interface="com.jk.service.poix.PoixService" ref="oixServiceService" />
 

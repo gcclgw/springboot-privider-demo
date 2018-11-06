@@ -1,6 +1,7 @@
 package com.jk.service.commodity;
 
 import com.alibaba.fastjson.JSONObject;
+import com.jk.model.ResultPage;
 import com.jk.model.commodity.Categorysecond;
 import com.jk.model.commodity.Product;
 import org.springframework.web.multipart.MultipartFile;
@@ -38,4 +39,13 @@ public interface CommodityService {
 
     /*一级分类查询*/
     List<Product> thePrimaryQuery(String cid, String csid);
+
+    /**
+     * 前端分页
+     * @param cid
+     * @param csid
+     * @return
+     */
+    ResultPage limitProduct(Product product,String cid, String csid);
+
 }

@@ -47,10 +47,15 @@ public interface CommodityMapper {
     List<Product> queryDate();
 
     /*一级分类查询*/
-    @Select(" select p.* from product p left join categorysecond cs on p.csid=cs.csid left join category c on cs.cid=c.cid where c.cid=#{cid} AND p.status = 2 OR cs.csid = #{csid} AND p.status = 2 ")
+    @Select(" select p.* from product p left join categorysecond cs on p.csid=cs.csid left join category c on cs.cid=c.cid where c.cid=#{cid} AND p.status = 2 OR cs.csid = #{csid} AND p.status = 2")
     List<Product> thePrimaryQuery(@Param("cid") String cid,@Param("csid") String csid);
 
 
+    //查询总条数
+    @Select("select count(1) from product")
+    int selectProductCount(Product product);
 
-
+    //查询list
+    @Select("select p.* from product p left join categorysecond cs on p.csid=cs.csid left join category c on cs.cid=c.cid where c.cid=#{cid} AND p.status = 2 OR cs.csid = #{csid} AND p.status = 2 limit #{startIndex},#{rows}")
+    List<Product> selectProductList(Product product);
 }
