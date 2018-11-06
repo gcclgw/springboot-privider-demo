@@ -54,8 +54,10 @@
     <dubbo:service interface="com.jk.service.orders.OrdersService" ref="ordersService" />
     <dubbo:service interface="com.jk.service.poix.PoixService" ref="poixService" />
     <dubbo:service interface="com.jk.service.powerTree.PowerTreeService" ref="powerTreeService" />
-    <dubbo:service interface="com.jk.service.register.RegisterService" ref="regService" />
-    <dubbo:service interface="com.jk.service.poix.PoixService" ref="oixServiceService" />
+    <dubbo:service interface="com.jk.service.register.RegisterService" ref="registerService" />
+    <dubbo:service interface="com.jk.service.adver.AdverService" ref="adverService" />
+    <dubbo:service interface="com.jk.service.adverSeat.AdverSeatService" ref="adverSeatService" />
+    <dubbo:service interface="com.jk.service.role.RoleService" ref="roleService" />
 
 
 </beans>

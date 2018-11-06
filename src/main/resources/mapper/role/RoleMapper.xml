@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jk.mapper.role.RoleMapper">
+
+	
+	<select id="findRolePowerById"   resultType="com.jk.model.power.PowerTree" >
+			SELECT  Tp.*  FROM  T_powertree  Tp , role_power  rp where  tp.id=rp.pid and rp.rid=#{rid}
+	</select>
+	
+	<select id="findPower" resultType="java.util.LinkedHashMap">
+ 		select  tp.id as id ,  tp.text as text , tp.url as href ,tp.pid as pid from t_powertree tp
+ 		</select>
+
+	<delete id="deleteRolePower" parameterType="String">
+ 			delete  from role_power   where  rid=#{rid}
+ 		</delete>
+ 	<insert id="saveRolePower" >
+	    insert into role_power (rid,pid)   
+	    values  
+	    <foreach collection="pids" item="pid" separator="," >  
+	        (#{0},#{pid})  
+	    </foreach> 
+  </insert>
+	 
+	
+	
+	
+	
+	
+	
+	
+	
+	<select id="selectRoleList" parameterType="com.jk.model.power.PowerTree" resultType="com.jk.model.power.PowerTree">
+		select  *  from t_role
+
+		limit #{startIndex},#{rows}
+	</select>
+	
+	<select id="getRoleCount" parameterType="com.jk.model.power.PowerTree" resultType="int">
+		select count(1) from t_role
+	</select>
+	
+</mapper>
