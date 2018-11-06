@@ -1,6 +1,7 @@
 package com.jk.service.commodity;
 
 import com.alibaba.fastjson.JSONObject;
+import com.jk.model.ResultPage;
 import com.jk.model.commodity.Categorysecond;
 import com.jk.model.commodity.CommodityProperty;
 import com.jk.model.commodity.Product;
@@ -48,4 +49,13 @@ public interface CommodityService {
 
     /*点击量加一*/
     void updateIs_Hot(String pid);
+
+    /**
+     * 前端分页
+     * @param cid
+     * @param csid
+     * @return
+     */
+    ResultPage limitProduct(Product product, String cid, String csid);
+
 }

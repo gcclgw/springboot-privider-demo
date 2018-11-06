@@ -62,4 +62,12 @@ public interface CommodityMapper {
     /*点击量加一*/
     @Update(" update product set is_hot=is_hot+1 where pid=#{pid}")
     void updateIs_Hot(@Param("pid") String pid);
+
+    //查询总条数
+    @Select("select count(1) from product")
+    int selectProductCount(Product product);
+
+    //查询list
+    @Select("select p.* from product p left join categorysecond cs on p.csid=cs.csid left join category c on cs.cid=c.cid where c.cid=#{cid} AND p.status = 2 OR cs.csid = #{csid} AND p.status = 2 limit #{startIndex},#{rows}")
+    List<Product> selectProductList(Product product);
 }

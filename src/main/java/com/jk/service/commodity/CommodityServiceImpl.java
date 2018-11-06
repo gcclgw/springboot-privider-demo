@@ -1,6 +1,7 @@
 package com.jk.service.commodity;
 
 import com.jk.mapper.commodity.CommodityMapper;
+import com.jk.model.ResultPage;
 import com.jk.model.commodity.Categorysecond;
 import com.jk.model.commodity.CommodityProperty;
 import com.jk.model.commodity.Product;
@@ -94,6 +95,26 @@ public class CommodityServiceImpl implements CommodityService {
     @Override
     public void updateIs_Hot(String pid) {
         commodityMapper.updateIs_Hot(pid);
+    }
+
+    /**
+     * 前端分页
+     * @param cid
+     * @param csid
+     * @return
+     */
+    @Override
+    public ResultPage limitProduct(Product product,String cid, String csid) {
+        product.calculate();
+        //构建返回数据体
+        ResultPage resultPage = new ResultPage();
+        //查询总条数
+        int count = commodityMapper.selectProductCount(product);
+        resultPage.setTotal(count);
+        //查询list
+        List<Product> p = commodityMapper.selectProductList(product);
+        resultPage.setRows(p);
+        return resultPage;
     }
 
 
