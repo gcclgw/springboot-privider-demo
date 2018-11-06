@@ -39,6 +39,7 @@
     <bean id="powerTreeService" class="com.jk.service.powerTree.PowerTreeServiceImpl" />
     <bean id="registerService" class="com.jk.service.register.RegisterServiceImpl" />
     <bean id="logoService" class="com.jk.service.logo.LogoServiceImpl" />
+    <bean id="checkService" class="com.jk.service.check.CheckServiceImpl" />
 
     <!-- Bean 聲明  和本地bean一样实现服务 -->
 
@@ -61,6 +62,7 @@
     <dubbo:service interface="com.jk.service.register.RegisterService" ref="regService" />
     <dubbo:service interface="com.jk.service.poix.PoixService" ref="oixServiceService" />
     <dubbo:service interface="com.jk.service.logo.LogoService" ref="logoService" />
+    <dubbo:service interface="com.jk.service.check.CheckService" ref="checkService" />
 
 
 </beans>
