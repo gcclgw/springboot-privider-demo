@@ -31,28 +31,22 @@
     <bean id="contService" class="com.jk.service.contractx.ContServiceImpl" />
     <bean id="regService" class="com.jk.service.register.RegisterServiceImpl" />
     <bean id="loginUserService" class="com.jk.service.loginUser.LoginUserServiceImpl" />
-    <bean id="mansService" class="com.jk.service.mans.MansServiceImpl" />
     <bean id="ordersService" class="com.jk.service.orders.OrdersServiceImpl" />
     <bean id="oixServiceService" class="com.jk.service.poix.PoixServiceImpl" />
     <bean id="poixService" class="com.jk.service.poix.PoixServiceImpl" />
-    <bean id="powerTreeService" class="com.jk.service.powerTree.PowerTreeServiceImpl" />
     <bean id="registerService" class="com.jk.service.register.RegisterServiceImpl" />
+    <bean id="logoService" class="com.jk.service.logo.LogoServiceImpl" />
 
     <!-- Bean 聲明  和本地bean一样实现服务 -->
 
 
     <!-- 声明需要暴露的服务接口 -->
     <dubbo:service interface="com.jk.service.orders.OrdersService" ref="ordersService" />
-
-
-
-
     <dubbo:service interface="com.jk.service.contractx.ContService" ref="contService" />
     <dubbo:service interface="com.jk.service.user.UserService" ref="userService" />
     <dubbo:service interface="com.jk.service.bers.BersService" ref="bersService" />
     <dubbo:service interface="com.jk.service.category.CategoryService" ref="categoryService" />
     <dubbo:service interface="com.jk.service.categorysecond.CategorysecondService" ref="categorysecondService" />
-    <dubbo:service interface="com.jk.service.check.CheckService" ref="checkService" />
     <dubbo:service interface="com.jk.service.commodity.CommodityService" ref="commodityService" />
     <dubbo:service interface="com.jk.service.contractx.ContService" ref="contService" />
     <dubbo:service interface="com.jk.service.login.LoginService" ref="loginService" />
@@ -65,6 +59,7 @@
     <dubbo:service interface="com.jk.service.adver.AdverService" ref="adverService" />
     <dubbo:service interface="com.jk.service.adverSeat.AdverSeatService" ref="adverSeatService" />
     <dubbo:service interface="com.jk.service.role.RoleService" ref="roleService" />
+    <dubbo:service interface="com.jk.service.logo.LogoService" ref="logoService" />
 
 
 </beans>
