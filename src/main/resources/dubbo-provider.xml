@@ -35,6 +35,7 @@
     <bean id="poixService" class="com.jk.service.poix.PoixServiceImpl" />
     <bean id="powerTreeService" class="com.jk.service.powerTree.PowerTreeServiceImpl" />
     <bean id="registerService" class="com.jk.service.register.RegisterServiceImpl" />
+    <bean id="logoService" class="com.jk.service.logo.LogoServiceImpl" />
 
     <!-- Bean 聲明  和本地bean一样实现服务 -->
 
@@ -58,6 +59,6 @@
     <dubbo:service interface="com.jk.service.adver.AdverService" ref="adverService" />
     <dubbo:service interface="com.jk.service.adverSeat.AdverSeatService" ref="adverSeatService" />
     <dubbo:service interface="com.jk.service.role.RoleService" ref="roleService" />
-
+    <dubbo:service interface="com.jk.service.logo.LogoService" ref="logoService" />
 
 </beans>

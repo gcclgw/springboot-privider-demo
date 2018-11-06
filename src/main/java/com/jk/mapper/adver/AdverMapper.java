@@ -12,4 +12,5 @@ public interface AdverMapper {
     void addAdver(Adver adver);
 
     List<Adver> findAdveSrById(String adverid);
+
 }

@@ -24,5 +24,6 @@
 	<select id="getAdverCount" parameterType="com.jk.model.adver.Adver" resultType="int">
 		select count(1) from ec_adver
 	</select>
+
 	
 </mapper>
