@@ -58,4 +58,8 @@ public interface CommodityMapper {
     /*商品属性*/
     @Select(" select c.* from product p left join commodityproperty c on p.pid=c.productid where p.pid=#{pid} ")
     List<CommodityProperty> queryCommodityProperty(@Param("pid") String pid);
+
+    /*点击量加一*/
+    @Update(" update product set is_hot=is_hot+1 where pid=#{pid}")
+    void updateIs_Hot(@Param("pid") String pid);
 }

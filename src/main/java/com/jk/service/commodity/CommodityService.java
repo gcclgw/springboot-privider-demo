@@ -45,4 +45,7 @@ public interface CommodityService {
 
     /*商品属性*/
     List<CommodityProperty> queryCommodityProperty(String pid);
+
+    /*点击量加一*/
+    void updateIs_Hot(String pid);
 }

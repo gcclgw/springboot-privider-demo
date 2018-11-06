@@ -91,5 +91,10 @@ public class CommodityServiceImpl implements CommodityService {
         return commodityMapper.queryCommodityProperty(pid);
     }
 
+    @Override
+    public void updateIs_Hot(String pid) {
+        commodityMapper.updateIs_Hot(pid);
+    }
+
 
 }
