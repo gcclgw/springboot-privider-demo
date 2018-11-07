@@ -31,7 +31,8 @@
     <bean id="poixService" class="com.jk.service.poix.PoixServiceImpl" />
     <bean id="powerTreeService" class="com.jk.service.powerTree.PowerTreeServiceImpl" />
     <bean id="registerService" class="com.jk.service.register.RegisterServiceImpl" />
-
+    <bean id="myWorkService" class="com.jk.service.mywork.MyWorkServiceImpl" />
+    <bean id="timingService" class="com.jk.service.timing.TimingServiceImpl" />
     <!-- Bean 聲明  和本地bean一样实现服务 -->
 
 
@@ -50,6 +51,6 @@
     <dubbo:service interface="com.jk.service.poix.PoixService" ref="poixService" />
     <dubbo:service interface="com.jk.service.powerTree.PowerTreeService" ref="powerTreeService" />
     <dubbo:service interface="com.jk.service.register.RegisterService" ref="registerService" />
-
-
+    <dubbo:service interface="com.jk.service.mywork.MyWorkService" ref="myWorkService" />
+    <dubbo:service interface="com.jk.service.timing.TimingService" ref="timingService" />
 </beans>
