@@ -18,5 +18,27 @@ public class RolePower implements Serializable {
      */
     private Integer rid;
 
+    public Integer getRpid() {
+        return rpid;
+    }
 
+    public void setRpid(Integer rpid) {
+        this.rpid = rpid;
+    }
+
+    public Integer getPid() {
+        return pid;
+    }
+
+    public void setPid(Integer pid) {
+        this.pid = pid;
+    }
+
+    public Integer getRid() {
+        return rid;
+    }
+
+    public void setRid(Integer rid) {
+        this.rid = rid;
+    }
 }

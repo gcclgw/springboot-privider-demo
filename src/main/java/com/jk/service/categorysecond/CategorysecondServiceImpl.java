@@ -3,6 +3,7 @@ package com.jk.service.categorysecond;
 import com.jk.mapper.categorysecond.CategorysecondMapper;
 import com.jk.model.category.Category;
 import com.jk.model.categorysecond.Categorysecond;
+import com.jk.model.commodity.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,20 @@ public class CategorysecondServiceImpl implements CategorysecondService {
 
     @Autowired
     private CategorysecondMapper categorysecondMapper;
+
+    /**
+     * 根据分类查询商品
+     */
+    @Override
+    public List<Product> queryProductByCid() {
+        return categorysecondMapper.queryProductByCid();
+    }
+
+    //查询一级表
+    @Override
+    public List<Category> queryCategory() {
+        return categorysecondMapper.queryCategory();
+    }
 
     /**
      * 根据一级查二级

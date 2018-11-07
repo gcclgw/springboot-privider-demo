@@ -1,11 +1,6 @@
 server:
-  port: 8082
+  port: 8086
 spring:
-  rabbitmq:
-    password: guest
-    username: guest
-    host: 127.0.0.1
-    port: 5672
   redis:
     host: 127.0.0.1
     port: 6379
@@ -15,7 +10,7 @@ spring:
         min-idle: 0
   data:
     mongodb:
-      uri: mongodb://127.0.0.1:27017/1804a
+      uri: mongodb://127.0.0.1:27017/text
   datasource:
     username: root
     password: root

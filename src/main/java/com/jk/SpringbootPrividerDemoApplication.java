@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ImportResource;
-import org.springframework.amqp.core.Queue;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
@@ -23,11 +22,11 @@ public class SpringbootPrividerDemoApplication {
         SpringApplication.run(SpringbootPrividerDemoApplication.class, args);
     }
 
-    @Bean
+    /*@Bean
     public Queue getQueue(){
         return new Queue("chuchu");
 
-    }
+    }*/
 
     public HttpMessageConverters fastJsonHttpMessageConverters() {
         FastJsonHttpMessageConverter fastConverter = new FastJsonHttpMessageConverter();

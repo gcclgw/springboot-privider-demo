@@ -30,6 +30,7 @@ public class CategoryServiceImpl implements CategoryService
     @Override
     public void delCategory(String cid) {
         categoryMapper.delCategory(cid);
+        categoryMapper.delCategorysecond(cid);
     }
 
     /**

@@ -1,11 +1,12 @@
 package com.jk.model.power;
 
+import com.jk.utils.Page;
 import com.jk.utils.PageUtil;
 
 import java.io.Serializable;
 import java.util.List;
 
-public class PowerTree extends PageUtil implements Serializable {
+public class PowerTree extends Page implements Serializable {
 
     private static final long serialVersionUID = -6760607400872654131L;
     private String id ;
@@ -24,6 +25,18 @@ public class PowerTree extends PageUtil implements Serializable {
 
     private Boolean selectable;
 
+    /**
+     * 业务字段
+     */
+    private String pids;
+
+    public String getPids() {
+        return pids;
+    }
+
+    public void setPids(String pids) {
+        this.pids = pids;
+    }
 
     public String getId() {
         return id;

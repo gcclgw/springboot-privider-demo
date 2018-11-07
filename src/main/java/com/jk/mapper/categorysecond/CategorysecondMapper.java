@@ -2,6 +2,7 @@ package com.jk.mapper.categorysecond;
 
 import com.jk.model.category.Category;
 import com.jk.model.categorysecond.Categorysecond;
+import com.jk.model.commodity.Product;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
@@ -10,6 +11,8 @@ import org.apache.ibatis.annotations.Update;
 import java.util.List;
 
 public interface CategorysecondMapper {
+
+
 
     /**
      * 查询二级
@@ -42,7 +45,7 @@ public interface CategorysecondMapper {
     /**
      * 修改二级
      */
-    @Update("update categorysecond set csname = ${csname},cid = ${cid} where csid = #{csid}")
+    @Update("update categorysecond set csname = #{csname},cid = #{cid} where csid = #{csid}")
     void editSecond(Categorysecond categorysecond);
 
     /**
@@ -53,8 +56,19 @@ public interface CategorysecondMapper {
     List<Category> querycate();
 
     /**
-     * 根据一级查二级
+     * 根据二级查商品
      */
-    @Select("SELECT * FROM categorysecond s,category c WHERE c.cid = s.cid")
+    @Select("SELECT * FROM categorysecond")
     List<Categorysecond> queryOneAndTwo();
+
+    //查询一级表
+    @Select("select * from category")
+    List<Category> queryCategory();
+
+    /**
+     * 根据分类查询商品
+     */
+    @Select("SELECT p.* FROM product p,category c,categorysecond s WHERE c.cid = s.cid \n" +
+            "AND s.csid = p.csid")
+    List<Product> queryProductByCid();
 }
