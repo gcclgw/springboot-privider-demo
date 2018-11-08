@@ -15,6 +15,4 @@ public interface AdverService {
     List<Adver> findAdveSrById(String adverid);
 
 
-
-
 }
