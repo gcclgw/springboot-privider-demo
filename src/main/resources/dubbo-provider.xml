@@ -25,23 +25,18 @@
     <bean id="categoryService" class="com.jk.service.category.CategoryServiceImpl" />
     <bean id="categorysecondService" class="com.jk.service.categorysecond.CategorysecondServiceImpl" />
     <bean id="mansService" class="com.jk.service.mans.MansServiceImpl" />
-    <bean id="bersService" class="com.jk.service.bers.BersServiceImpl" />
     <bean id="loginService" class="com.jk.service.login.LoginServiceImpl" />
     <bean id="powerTreeService" class="com.jk.service.powerTree.PowerTreeServiceImpl" />
     <bean id="busService" class="com.jk.service.business.BussinessServiceImpl" />
     <bean id="checkService" class="com.jk.service.check.CheckServiceImpl" />
     <bean id="commodityService" class="com.jk.service.commodity.CommodityServiceImpl" />
     <bean id="contService" class="com.jk.service.contractx.ContServiceImpl" />
-    <bean id="regService" class="com.jk.service.register.RegisterServiceImpl" />
     <bean id="loginUserService" class="com.jk.service.loginUser.LoginUserServiceImpl" />
-    <bean id="mansService" class="com.jk.service.mans.MansServiceImpl" />
     <bean id="ordersService" class="com.jk.service.orders.OrdersServiceImpl" />
     <bean id="oixServiceService" class="com.jk.service.poix.PoixServiceImpl" />
     <bean id="poixService" class="com.jk.service.poix.PoixServiceImpl" />
-    <bean id="powerTreeService" class="com.jk.service.powerTree.PowerTreeServiceImpl" />
     <bean id="registerService" class="com.jk.service.register.RegisterServiceImpl" />
     <bean id="logoService" class="com.jk.service.logo.LogoServiceImpl" />
-    <bean id="checkService" class="com.jk.service.check.CheckServiceImpl" />
     <bean id="adverService" class="com.jk.service.adver.AdverSrviceImpl" />
     <bean id="adverSeatService" class="com.jk.service.adverSeat.AdverSeatServiceImpl" />
     <bean id="roleService" class="com.jk.service.role.RoleServiceImpl" />
