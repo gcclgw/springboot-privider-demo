@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jk.mapper.adverSeat.AdverSeatMapper">
+
+
+	<select id="selectAdverSeatList" parameterType="com.jk.model.adverseat.Adverseat" resultType="com.jk.model.adverseat.Adverseat">
+		select  ecads.seatid as seatid ,ecads.seatname as seatname
+		 from ec_adverseat ecads
+		limit #{startIndex},#{rows}
+	</select>
+	
+	<select id="getAdverSeatCount" parameterType="com.jk.model.adverseat.Adverseat" resultType="int">
+		select count(1) from ec_adverseat
+	</select>
+	
+</mapper>

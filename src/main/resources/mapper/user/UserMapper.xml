@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jk.mapper.user.UserMapper">
+
+	
+	<select id="findUserRoleById"   resultType="com.jk.model.role.Role" >
+			SELECT  r.rid as rid , r.rolename as text , r.pid as pid
+			  FROM  T_ROLE  r , t_nexus  ur where  r.rid=ur.rid and ur.uid=#{uid}
+	</select>
+
+    <select id="selectRoleList" parameterType="com.jk.model.role.Role" resultType="com.jk.model.role.Role">
+		SELECT  r.rid as rid, r.rolename as text , r.pid as pid    FROM  t_role  r
+		limit #{startIndex},#{rows}
+	</select>
+
+    <select id="getRoleCount" parameterType="com.jk.model.role.Role" resultType="int">
+		select count(1) from t_role
+	</select>
+
+	<delete id="deleteUserRole" parameterType="String">
+ 			delete  from t_nexus   where  uid=#{uid}
+ 		</delete>
+ 	<insert id="SaveUserRole" >
+	    insert into t_nexus (rid,uid)
+	    values  
+	    <foreach collection="roleIds" item="rid" separator="," >
+	        (#{rid},#{0})
+	    </foreach> 
+  </insert>
+
+	<select id="selectUserList" parameterType="com.jk.model.user.User" resultType="com.jk.model.user.User">
+		select  u.uid as uid , u.username as username ,
+		u.password as password
+		 from adminuser u
+		limit #{startIndex},#{rows}
+	</select>
+	
+	<select id="getUserCount" parameterType="com.jk.model.user.User" resultType="int">
+		select count(1) from adminuser
+	</select>
+	
+</mapper>

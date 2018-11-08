@@ -8,12 +8,11 @@ spring:
     port: 5672
   data:
     mongodb:
-      uri: mongodb://127.0.0.1:27017/1804a
-  datasource:
-    username: root
-    password: root
-    url: jdbc:mysql://127.0.0.1:3306/shop?useUnicode=true&characterEncoding=UTF-8
-    driver-class-name: com.mysql.jdbc.Driver
+      uri: mongodb://127.0.0.1:27017/1804A
+
+
+
+
   redis:
     host: 127.0.0.1
     port: 6379
@@ -34,6 +33,18 @@ mybatis:
 #pagehelper.reasonable=true#pagehelper分页插件配置
 #pagehelper.supportMethodsArguments=true
 #pagehelper.params=count=countSqlpagehelper.helperDialect=mysql
+
+datasource:
+  master:
+    jdbcUrl: jdbc:mysql://localhost:3310/shop?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  slave:
+    jdbcUrl: jdbc:mysql://localhost:3311/shop?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
 
 
 
