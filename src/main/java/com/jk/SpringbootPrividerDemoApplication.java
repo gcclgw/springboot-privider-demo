@@ -11,11 +11,17 @@ import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 
-@SpringBootApplication
+@SpringBootApplication(exclude = {
+        DataSourceAutoConfiguration.class
+})
+@EnableTransactionManagement(order = 2)
 @ImportResource(value = {"classpath:dubbo-provider.xml"})
 @MapperScan("com.jk.mapper")
+@EnableScheduling
 public class SpringbootPrividerDemoApplication {
 
     public static void main(String[] args) {

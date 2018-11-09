@@ -1,0 +1,52 @@
+server:
+  port: 8086
+spring:
+  rabbitmq:
+    password: guest
+    username: guest
+    host: 127.0.0.1
+    port: 5672
+  data:
+    mongodb:
+      uri: mongodb://127.0.0.1:27017/text
+
+
+
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    jedis:
+      pool:
+        max-idle: 8
+        min-idle: 0
+
+
+
+#扫描xml文件-
+#mybatis.mapper-locations=classpath:/mapper/*/*.xml
+mybatis:
+  mapper-locations: classpath:/mapper/*/*.xml
+
+#pagehelper分页插件配置
+#pagehelper.helperDialect=mysql
+#pagehelper.reasonable=true#pagehelper分页插件配置
+#pagehelper.supportMethodsArguments=true
+#pagehelper.params=count=countSqlpagehelper.helperDialect=mysql
+
+datasource:
+  master:
+    jdbcUrl: jdbc:mysql://192.168.1.107:3310/shop?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  slave:
+    jdbcUrl: jdbc:mysql://192.168.1.107:3311/shop?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+
+
+
+
+
