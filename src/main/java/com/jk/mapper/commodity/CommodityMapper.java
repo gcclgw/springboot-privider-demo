@@ -79,7 +79,7 @@ public interface CommodityMapper {
 
 
     /*新增订单*/
-    @Insert(" insert into orders (oid,total,ordertime,uid,otype) values(#{orders.oid},#{orders.total},#{orders.ordertime},#{orders.uid},2) ")
+    @Insert(" insert into orders (oid,total,ordertime,uid,otype) values(#{orders.oid},#{orders.total},now(),#{orders.uid},2) ")
     void addOrders(@Param("orders") Orders orders);
 
     /*新增商品订单关联表*/
@@ -102,7 +102,8 @@ public interface CommodityMapper {
     @Update(" update user set integral=integral-#{ssss} where uid=#{userid}")
     void updateUsers(@Param("ssss")Integer ssss,@Param("userid") Integer userid);
 
+
     /*增加积分*/
-    @Update(" update user set integral=integral+#{awards} where uid=#{uid} ")
+    @Update(" update user set integral=integral+#{awards} where uid=#{uid}")
     void addJf(@Param("awards") Integer awards,@Param("uid") Integer uid);
 }

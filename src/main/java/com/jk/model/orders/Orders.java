@@ -11,7 +11,7 @@ public class Orders implements Serializable {
 
     private  Integer total;
 
-    private Date ordertime;
+    private String ordertime;
 
     private Integer state;
 
@@ -45,28 +45,8 @@ public class Orders implements Serializable {
     //商品价格
     private String price;
 
-    public String getPname() {
-        return pname;
-    }
-
-    public void setPname(String pname) {
-        this.pname = pname;
-    }
-
-    public String getPimg() {
-        return pimg;
-    }
-
-    public void setPimg(String pimg) {
-        this.pimg = pimg;
-    }
-
-    public String getPrice() {
-        return price;
-    }
-
-    public void setPrice(String price) {
-        this.price = price;
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
     }
 
     public Integer getOid() {
@@ -85,11 +65,11 @@ public class Orders implements Serializable {
         this.total = total;
     }
 
-    public Date getOrdertime() {
+    public String getOrdertime() {
         return ordertime;
     }
 
-    public void setOrdertime(Date ordertime) {
+    public void setOrdertime(String ordertime) {
         this.ordertime = ordertime;
     }
 
@@ -171,5 +151,29 @@ public class Orders implements Serializable {
 
     public void setSubtotal(Integer subtotal) {
         this.subtotal = subtotal;
+    }
+
+    public String getPname() {
+        return pname;
+    }
+
+    public void setPname(String pname) {
+        this.pname = pname;
+    }
+
+    public String getPimg() {
+        return pimg;
+    }
+
+    public void setPimg(String pimg) {
+        this.pimg = pimg;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
     }
 }

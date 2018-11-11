@@ -141,7 +141,6 @@ public class CommodityServiceImpl implements CommodityService {
 
     @Override
     public void addOrders(Product product, Integer count, Integer uid, Orders orders) {
-        orders.setOrdertime(new Date());
         Integer price = product.getShop_price();
         int i = price * count;
         orders.setTotal(i);
