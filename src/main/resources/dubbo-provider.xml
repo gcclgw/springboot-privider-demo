@@ -42,6 +42,7 @@
     <bean id="logoService" class="com.jk.service.logo.LogoServiceImpl" />
     <bean id="workService" class="com.jk.service.work.WorkServiceImpl" />
     <bean id="blackService" class="com.jk.service.blacklist.BlackListServiceImpl" />
+    <bean id="checkService" class="com.jk.service.check.CheckServiceImpl" />
 
     <!-- 声明需要暴露的服务接口 -->
     <dubbo:service interface="com.jk.service.user.UserService" ref="userService" />
@@ -66,7 +67,6 @@
     <dubbo:service interface="com.jk.service.work.WorkService" ref="workService" />
     <dubbo:service interface="com.jk.service.blacklist.BlackListService" ref="blackService" />
     <dubbo:service interface="com.jk.service.orders.OrdersService" ref="ordersService" />
-
-
-
+    <dubbo:service interface="com.jk.service.check.CheckService" ref="checkService" />
+    <dubbo:service interface="com.jk.service.contractx.ContService" ref="contService" />
 </beans>
