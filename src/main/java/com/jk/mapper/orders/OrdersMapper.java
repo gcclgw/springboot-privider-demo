@@ -40,4 +40,13 @@ public interface OrdersMapper {
 
     @Update("update orders  set state = 1  where oid=#{oid} ")
     void updateOrderById(Integer oid);
+
+    @Select("select  o.oid oid,p.image image,p.pname pname,p.shop_price shopprice,oi.count count,o.total total,oi.subtotal  subtotal from orderitem oi,orders o,product p where oi.oid=o.oid and oi.pid=p.pid and oi.oid=#{oid}")
+    List<Orders> queryOrdersByOid(@Param("oid") Integer oid);
+
+    @Select(" select o.* from orders o where o.oid=#{oid}")
+    Orders queryTotalByOid(@Param("oid")Integer oid);
+
+    @Update("update orders  set state = 3  where oid=#{oid} ")
+    void updateOrderState(@Param("oid")Integer oid);
 }

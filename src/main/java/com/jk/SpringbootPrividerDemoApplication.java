@@ -22,8 +22,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @ImportResource(value = {"classpath:dubbo-provider.xml"})
 @MapperScan("com.jk.mapper")
 @EnableScheduling
-
-
 public class SpringbootPrividerDemoApplication {
 
     public static void main(String[] args) {

@@ -64,4 +64,19 @@ public class OrdersServiceImpl implements OrdersService {
     public void updateOrderById(Integer oid) {
         ordersMapper.updateOrderById(oid);
     }
+
+    @Override
+    public List<Orders> queryOrdersByOid(Integer oid) {
+       return ordersMapper.queryOrdersByOid(oid);
+    }
+
+    @Override
+    public Orders queryTotalByOid(Integer oid) {
+        return ordersMapper.queryTotalByOid(oid);
+    }
+
+    @Override
+    public void updateOrderState(Integer oid) {
+        ordersMapper.updateOrderState(oid);
+    }
 }

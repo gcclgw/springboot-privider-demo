@@ -21,44 +21,59 @@
 
     <!-- Bean 聲明  和本地bean一样实现服务 -->
     <bean id="userService" class="com.jk.service.user.UserServiceImpl" />
+    <bean id="bersService" class="com.jk.service.bers.BersServiceImpl" />
     <bean id="categoryService" class="com.jk.service.category.CategoryServiceImpl" />
     <bean id="categorysecondService" class="com.jk.service.categorysecond.CategorysecondServiceImpl" />
-    <bean id="bersService" class="com.jk.service.bers.BersServiceImpl" />
+    <bean id="checkService" class="com.jk.service.check.CheckServiceImpl" />
+    <bean id="mansService" class="com.jk.service.mans.MansServiceImpl" />
+    <bean id="loginService" class="com.jk.service.login.LoginServiceImpl" />
+    <bean id="powerTreeService" class="com.jk.service.powerTree.PowerTreeServiceImpl" />
+    <bean id="busService" class="com.jk.service.business.BussinessServiceImpl" />
+    <bean id="checkService" class="com.jk.service.check.CheckServiceImpl" />
     <bean id="commodityService" class="com.jk.service.commodity.CommodityServiceImpl" />
     <bean id="contService" class="com.jk.service.contractx.ContServiceImpl" />
-    <bean id="regService" class="com.jk.service.register.RegisterServiceImpl" />
     <bean id="loginService" class="com.jk.service.login.LoginServiceImpl" />
     <bean id="loginUserService" class="com.jk.service.loginUser.LoginUserServiceImpl" />
     <bean id="mansService" class="com.jk.service.mans.MansServiceImpl" />
     <bean id="ordersService" class="com.jk.service.orders.OrdersServiceImpl" />
     <bean id="oixServiceService" class="com.jk.service.poix.PoixServiceImpl" />
     <bean id="poixService" class="com.jk.service.poix.PoixServiceImpl" />
-    <bean id="powerTreeService" class="com.jk.service.powerTree.PowerTreeServiceImpl" />
     <bean id="registerService" class="com.jk.service.register.RegisterServiceImpl" />
+    <bean id="myWorkService" class="com.jk.service.mywork.MyWorkServiceImpl" />
+    <bean id="timingService" class="com.jk.service.timing.TimingServiceImpl" />
+    <bean id="adverService" class="com.jk.service.adver.AdverSrviceImpl" />
+    <bean id="adverSeatService" class="com.jk.service.adverSeat.AdverSeatServiceImpl" />
+    <bean id="roleService" class="com.jk.service.role.RoleServiceImpl" />
     <bean id="logoService" class="com.jk.service.logo.LogoServiceImpl" />
-
-    <!-- Bean 聲明  和本地bean一样实现服务 -->
-
+    <bean id="adverService" class="com.jk.service.adver.AdverSrviceImpl" />
+    <bean id="adverSeatService" class="com.jk.service.adverSeat.AdverSeatServiceImpl" />
+    <bean id="roleService" class="com.jk.service.role.RoleServiceImpl" />
+    <bean id="workService" class="com.jk.service.work.WorkServiceImpl" />
+    <bean id="blackService" class="com.jk.service.blacklist.BlackListServiceImpl" />
 
     <!-- 声明需要暴露的服务接口 -->
-    <dubbo:service interface="com.jk.service.orders.OrdersService" ref="ordersService" />
-    <dubbo:service interface="com.jk.service.contractx.ContService" ref="contService" />
     <dubbo:service interface="com.jk.service.user.UserService" ref="userService" />
     <dubbo:service interface="com.jk.service.bers.BersService" ref="bersService" />
     <dubbo:service interface="com.jk.service.category.CategoryService" ref="categoryService" />
     <dubbo:service interface="com.jk.service.categorysecond.CategorysecondService" ref="categorysecondService" />
+    <dubbo:service interface="com.jk.service.check.CheckService" ref="checkService" />
     <dubbo:service interface="com.jk.service.commodity.CommodityService" ref="commodityService" />
-    <dubbo:service interface="com.jk.service.contractx.ContService" ref="contService" />
     <dubbo:service interface="com.jk.service.login.LoginService" ref="loginService" />
     <dubbo:service interface="com.jk.service.loginUser.LoginUserService" ref="loginUserService" />
     <dubbo:service interface="com.jk.service.mans.MansService" ref="mansService" />
-    <dubbo:service interface="com.jk.service.orders.OrdersService" ref="ordersService" />
     <dubbo:service interface="com.jk.service.poix.PoixService" ref="poixService" />
     <dubbo:service interface="com.jk.service.powerTree.PowerTreeService" ref="powerTreeService" />
     <dubbo:service interface="com.jk.service.register.RegisterService" ref="registerService" />
+    <dubbo:service interface="com.jk.service.mywork.MyWorkService" ref="myWorkService" />
+    <dubbo:service interface="com.jk.service.timing.TimingService" ref="timingService" />
     <dubbo:service interface="com.jk.service.adver.AdverService" ref="adverService" />
     <dubbo:service interface="com.jk.service.adverSeat.AdverSeatService" ref="adverSeatService" />
     <dubbo:service interface="com.jk.service.role.RoleService" ref="roleService" />
+    <dubbo:service interface="com.jk.service.poix.PoixService" ref="oixServiceService" />
     <dubbo:service interface="com.jk.service.logo.LogoService" ref="logoService" />
+    <dubbo:service interface="com.jk.service.business.BussinessService" ref="busService" />
+    <dubbo:service interface="com.jk.service.work.WorkService" ref="workService" />
+    <dubbo:service interface="com.jk.service.blacklist.BlackListService" ref="blackService" />
+
 
 </beans>

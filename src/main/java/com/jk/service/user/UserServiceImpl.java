@@ -5,6 +5,7 @@ import com.jk.model.role.Role;
 import com.jk.model.user.User;
 import com.jk.utils.ResultPage;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.LinkedHashMap;

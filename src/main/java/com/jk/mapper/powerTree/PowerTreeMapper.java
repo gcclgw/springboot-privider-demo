@@ -18,6 +18,8 @@ public interface PowerTreeMapper {
             "LEFT JOIN t_nexus tn on tr.rid  = tn.rid " +
             "where  tn.uid = #{userId} and tp.pid = #{id}")
     List<PowerTree> getNode(@Param("id") String id,@Param("userId") String userId);
+ /*   @Select("select  id ,  text , url as href ,pid from t_powertree  where pid = #{value}")
+    List<PowerTree> getNode(@Param("value") String id);*/
 
     /*@Select("select  id ,  text , url as href ,pid from t_powertree  where pid = #{value}")
     List<PowerTree> getNodes(String id);*/

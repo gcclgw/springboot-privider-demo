@@ -5,6 +5,7 @@ import com.jk.model.adver.Adver;
 import java.util.List;
 
 public interface AdverMapper {
+
     int getAdverCount(Adver adver);
 
     List<Adver> selectAdverList(Adver adver);
