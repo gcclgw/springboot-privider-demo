@@ -5,6 +5,8 @@ import com.jk.model.ResultPage;
 import com.jk.model.commodity.Categorysecond;
 import com.jk.model.commodity.CommodityProperty;
 import com.jk.model.commodity.Product;
+import com.jk.model.orders.Orders;
+import com.jk.model.users.Users;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -58,4 +60,26 @@ public interface CommodityService {
      */
     ResultPage limitProduct(Product product, String cid, String csid);
 
+    /*查询食品*/
+    List<Product> queryShopIntegral();
+
+    /*新增订单*/
+    void addOrders(Product product, Integer count, Integer uid, Orders orders);
+
+    /*新增商品订单关联表*/
+    void addOrdersitem(Product product, Integer count, Orders orders);
+
+    /*查询关联商品*/
+    Product selectProduct( Orders orders);
+
+    /*用户信息回显*/
+    Users selectUsers(Integer uid);
+
+    /*修改订单*/
+    void updateOrder(Orders orders);
+    /*修改积分*/
+    void updateUsers(Integer ssss,Integer userid);
+
+    /*增加积分*/
+    void addJf(Integer awards,Integer uid);
 }

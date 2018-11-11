@@ -12,6 +12,6 @@ public interface RegisterMapper {
     @Select("select * from user where username = #{username}")
     List<Users> queryUserByName(@Param("username") String username);
 
-    @Insert("insert into `user`(username,password,`name`,email,phone,addr,state,members) values(#{username},#{password},#{name},#{email},#{phone},#{addr},1,1)")
+    @Insert("insert into `user`(username,password,`name`,email,phone,addr,state,members,integral) values(#{username},#{password},#{name},#{email},#{phone},#{addr},1,1,100)")
     void regUser(Users user);
 }

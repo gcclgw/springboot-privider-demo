@@ -13,9 +13,9 @@ public class Product extends Page implements Serializable {
 
     private String pname;
 
-    private String market_price;
+    private Integer market_price;
 
-    private String shop_price;
+    private Integer shop_price;
 
     private String image;
 
@@ -28,6 +28,10 @@ public class Product extends Page implements Serializable {
     private Integer csid;
 
     private Integer status;
+
+    private Integer count;
+
+    private Double subtotal;
 
     public static long getSerialVersionUID() {
         return serialVersionUID;
@@ -49,19 +53,19 @@ public class Product extends Page implements Serializable {
         this.pname = pname;
     }
 
-    public String getMarket_price() {
+    public Integer getMarket_price() {
         return market_price;
     }
 
-    public void setMarket_price(String market_price) {
+    public void setMarket_price(Integer market_price) {
         this.market_price = market_price;
     }
 
-    public String getShop_price() {
+    public Integer getShop_price() {
         return shop_price;
     }
 
-    public void setShop_price(String shop_price) {
+    public void setShop_price(Integer shop_price) {
         this.shop_price = shop_price;
     }
 
@@ -111,5 +115,21 @@ public class Product extends Page implements Serializable {
 
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+
+    public Double getSubtotal() {
+        return subtotal;
+    }
+
+    public void setSubtotal(Double subtotal) {
+        this.subtotal = subtotal;
     }
 }

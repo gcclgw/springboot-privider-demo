@@ -2,6 +2,7 @@ package com.jk.model.orders;
 
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class Orders implements Serializable {
 
@@ -10,7 +11,7 @@ public class Orders implements Serializable {
 
     private  Integer total;
 
-    private String ordertime;
+    private Date ordertime;
 
     private Integer state;
 
@@ -74,11 +75,11 @@ public class Orders implements Serializable {
         this.total = total;
     }
 
-    public String getOrdertime() {
+    public Date getOrdertime() {
         return ordertime;
     }
 
-    public void setOrdertime(String ordertime) {
+    public void setOrdertime(Date ordertime) {
         this.ordertime = ordertime;
     }
 

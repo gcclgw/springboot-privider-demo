@@ -5,9 +5,14 @@ import com.jk.model.ResultPage;
 import com.jk.model.commodity.Categorysecond;
 import com.jk.model.commodity.CommodityProperty;
 import com.jk.model.commodity.Product;
+import com.jk.model.orders.Orders;
+import com.jk.model.users.Users;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -16,6 +21,13 @@ public class CommodityServiceImpl implements CommodityService {
 
     @Autowired
     private CommodityMapper commodityMapper;
+
+    @Autowired
+    private RedisTemplate redisTemplate;
+
+    public CommodityServiceImpl() throws ParseException {
+    }
+
 
     @Override
     public List<Product> queryCommodity() {
@@ -74,7 +86,9 @@ public class CommodityServiceImpl implements CommodityService {
 
     @Override
     public List<Product> queryDate() {
-        return commodityMapper.queryDate();
+        List<Product> prtList = commodityMapper.queryDate();
+        redisTemplate.opsForValue().set("newGoods", prtList);
+        return prtList;
     }
 
     @Override
@@ -115,6 +129,57 @@ public class CommodityServiceImpl implements CommodityService {
         List<Product> p = commodityMapper.selectProductList(product);
         resultPage.setRows(p);
         return resultPage;
+    }
+
+    @Override
+    public List<Product> queryShopIntegral() {
+        return commodityMapper.queryShopIntegral();
+    }
+
+
+
+
+    @Override
+    public void addOrders(Product product, Integer count, Integer uid, Orders orders) {
+        orders.setOrdertime(new Date());
+        Integer price = product.getShop_price();
+        int i = price * count;
+        orders.setTotal(i);
+        orders.setUid(uid);
+      commodityMapper.addOrders(orders);
+    }
+
+
+    @Override
+    public void addOrdersitem(Product product, Integer count, Orders orders) {
+        Integer price = product.getShop_price();
+        int i = price * count;
+        commodityMapper.addOrdersitem(i,product,count, orders);
+    }
+
+    @Override
+    public Product selectProduct(Orders orders) {
+        return commodityMapper.selectProduct(orders);
+    }
+
+    @Override
+    public Users selectUsers(Integer uid) {
+        return commodityMapper.selectUsers(uid);
+    }
+
+    @Override
+    public void updateOrder(Orders orders) {
+        commodityMapper.updateOrder(orders);
+    }
+
+    @Override
+    public void updateUsers(Integer ssss, Integer userid) {
+        commodityMapper.updateUsers(ssss,userid);
+    }
+
+    @Override
+    public void addJf(Integer awards,Integer uid) {
+        commodityMapper.addJf(awards,uid);
     }
 
 
